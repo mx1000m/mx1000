@@ -26,35 +26,40 @@
 
 <canvas id ='ResumeMX'></canvas>
 
+
 <script>
-  var db = document.body;
-  var c = document.getElementById('ResumeMX');
-  var $ = c.getContext('2d');
-  c.width = window.innerWidth;
-  c.height = window.innerHeight;
-  var resume;
+    var db = document.body;
+    var c = document.getElementById('ResumeMX');
+    var $ = c.getContext('2d');
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  var lastTimestamp = 0;
-  var frameRate = 2000; // Adjust as needed
-  var interval = 1000 / frameRate;
+    // Set canvas dimensions for mobile and desktop
+    c.width = isMobile ? window.innerWidth : 800;
+    c.height = isMobile ? window.innerHeight : 600;
+    var leftMargin = isMobile ? 10 : 100; // Adjust the left margin for mobile
 
-  function relay(timestamp) {
-    if (!lastTimestamp || timestamp - lastTimestamp >= interval) {
-      lastTimestamp = timestamp;
-      resume();
+    var resume;
+    var lastTimestamp = 0;
+    var frameRate = 1000; // Adjust as needed
+    var interval = 1000 / frameRate;
+
+    function relay(timestamp) {
+        if (!lastTimestamp || timestamp - lastTimestamp >= interval) {
+            lastTimestamp = timestamp;
+            resume();
+        }
+
+        window.requestAnimationFrame(relay);
     }
-
-    window.requestAnimationFrame(relay);
-  }
-
-
-
 </script>
-  <!--Script MX!-->
 
 
+
+<!--Script MX!-->
 <script>
-/* NAME: MX1000
+
+/* 
+NAME: MX1000
 DATE OF BIRTH: ██ / ██ / ████
 
 ░█████╗░██████╗░████████╗  ██████╗░██╗██████╗░███████╗░█████╗░████████╗░█████╗░██████╗░
@@ -131,57 +136,62 @@ All to find is here.
 <script>
 
 
-  _s = db.querySelectorAll("script")[1].innerHTML.split("\n");
-  x = 0; 
-  y = 1; 
-  c.width = w = window.innerWidth;
-  c.height = h = _s.length*20;
-  db.style.margin = 0;
-  db.style.background = "black";
-  db.style.overflow = "scroll";
-  $.textBaseline = "top";
-  $.font = "1.1em monospace";
+     _s = db.querySelectorAll("script")[1].innerHTML.split("\n");
+    x = 0;
+    y = 1;
+    c.width = w = isMobile ? window.innerWidth : 1000;
+    c.height = h = _s.length * 20;
+    db.style.margin = 0;
+    db.style.background = "black";
+    db.style.overflow = "scroll";
+    $.textBaseline = "top";
+    
+    // Adjust the font size for mobile
+    $.font = isMobile ? "0.7em monospace" : "1.1em monospace";
+    
+    function drawText(text, x, y) {
+        var lines = text.split('\n');
+        lines.forEach(function (line, i) {
+            $.fillText(line, x, y + i * 16);
+        });
+    }
 
-  function drawText(text, x, y) {
-    var lines = text.split('\n');
-    lines.forEach(function (line, i) {
-      $.fillText(line, x, y + i * 16);
-    });
-  }
+    resume = function () {
+        $.globalCompositeOperation = "source-over";
+        $.shadowBlur = 0;
+        $.fillStyle = "hsla(0,0%,0%,0.4)";
+        $.fillRect(0, 0, w, h);
+        $.shadowColor = "hsla(120,100%,50%,0.5)";
+        $.shadowBlur = 9;
+        $.fillStyle = "hsla(120,100%,20%,1)";
+        $.globalCompositeOperation = "lighter";
 
+        _s.forEach(function (t, i) {
+            if (i <= y) {
+                if (i == y) {
+                    t = t.substr(0, x);
+                }
+                drawText(t, leftMargin, 40 + i * 16);
+            }
+        });
 
-  resume = function () {
-    $.globalCompositeOperation = "source-over";
-    $.shadowBlur = 0;
-    $.fillStyle = "hsla(0,0%,0%,0.4)";
-    $.fillRect(0, 0, w, h);
-    $.shadowColor = "hsla(120,100%,50%,0.5)";
-    $.shadowBlur = 9;
-    $.fillStyle = "hsla(120,100%,20%,1)"; // Change the text color to blue
-    $.globalCompositeOperation = "lighter";
-
-    _s.forEach(function (t, i) {
-      if (i <= y) {
-        if (i == y) {
-          t = t.substr(0, x);
+        $.fillStyle = "hsla(120,100%,50%,1)";
+        $.fillRect(leftMargin + $.measureText(_s[y].substr(0, x)).width, 42 + y * 16, 10, 14);
+        x += 3;
+        if (x >= _s[y].length) {
+            y++;
+            x = 0;
         }
-        drawText(t, 100, 40 + i * 16);
-      }
-    });
-                 
-  $.fillStyle = "hsla(120,100%,50%,1)";
-  $.fillRect(100+$.measureText(_s[y].substr(0, x)).width, 42+y*16, 10, 14);
-  x += 3;
-    if (x >= _s[y].length) { y++; x = 0;}
-      if (y*16 > innerHeight-10) { y +=1; $.translate(0, 0);}
-        if (y >= _s.length-1) { window.clearInterval();}
-}
+        if (y * 16 > innerHeight - 10) {
+            y += 1;
+            $.translate(0, 0);
+        }
+        if (y >= _s.length - 1) {
+            window.clearInterval();
+        }
+    }
 
-  
-
-
-
-relay();
+    relay();
   
 </script>
 
