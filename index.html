@@ -12,12 +12,14 @@
         body {
             background-color: black;
             margin: 0; /* Remove default margin */
-            overflow: hidden; /* Prevent scrollbars */
+            overflow-x: auto; /* Enable horizontal scroll for mobile */
+            overflow-y: hidden; /* Prevent vertical scrollbars */
         }
 
         canvas {
             display: block; /* Remove default canvas alignment */
             background-color: black; /* Set canvas background color to black */
+            white-space: nowrap; /* Prevent text wrapping */
         }
     </style>
 </head>
@@ -36,12 +38,16 @@
     // Set canvas dimensions for mobile and desktop
     c.width = isMobile ? window.innerWidth : 800;
     c.height = isMobile ? window.innerHeight : 600;
+var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
     var leftMargin = isMobile ? 10 : 130; // Adjust the left margin for mobile
 
     var resume;
     var lastTimestamp = 0;
     var frameRate = 1000; // Adjust as needed
     var interval = 1000 / frameRate;
+
+
+
 
     function relay(timestamp) {
         if (!lastTimestamp || timestamp - lastTimestamp >= interval) {
@@ -59,7 +65,8 @@
 <script>
 
 /* 
-NAME: MX1000
+NAME: MAX
+ALIAS: MX1000
 DATE OF BIRTH: ██ / ██ / ████
 
 ░█████╗░██████╗░████████╗  ██████╗░██╗██████╗░███████╗░█████╗░████████╗░█████╗░██████╗░
