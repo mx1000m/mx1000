@@ -36,7 +36,7 @@
     // Set canvas dimensions for mobile and desktop
     c.width = isMobile ? window.innerWidth : 800;
     c.height = isMobile ? window.innerHeight : 600;
-    var leftMargin = isMobile ? 10 : 100; // Adjust the left margin for mobile
+    var leftMargin = isMobile ? 10 : 130; // Adjust the left margin for mobile
 
     var resume;
     var lastTimestamp = 0;
@@ -147,7 +147,7 @@ All to find is here.
     $.textBaseline = "top";
     
     // Adjust the font size for mobile
-    $.font = isMobile ? "0.7em monospace" : "1.1em monospace";
+    $.font = isMobile ? "1.1em monospace" : "1.1em monospace";
     
     function drawText(text, x, y) {
         var lines = text.split('\n');
