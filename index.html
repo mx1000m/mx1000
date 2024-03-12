@@ -16,21 +16,22 @@ body {
     overflow-y: hidden;
     white-space: nowrap; /* Prevent text wrapping */
 }
-
+ /* Canvas CSS */
         canvas {
             display: block; /* Remove default canvas alignment */
             background-color: black; /* Set canvas background color to black */
             white-space: nowrap; /* Prevent text wrapping */
-    margin-bottom: -200px; /* Adjust the margin-bottom value as needed */
+    margin-bottom: -55px; /* Adjust the margin-bottom value as needed */
 }
 
-  /* Add this style to center the video */
+  /* Video CSS */
   .video-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; /* Adjust the height as needed */
-  }
+    margin-top: -0px; /* Adjust the margin-top value as needed */
+        }
 
   iframe {
     max-width: 100%; /* Ensure the video doesn't exceed the width of its container */
@@ -52,15 +53,15 @@ body {
     var $ = c.getContext('2d');
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    // Set canvas dimensions for mobile and desktop
+    // Canvas dimensions for mobile and desktop
     c.width = isMobile ? window.innerWidth : 800;
     c.height = isMobile ? window.innerHeight : 600;
 var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-var leftMargin = isMobile ? 10 + scrollbarWidth : 130; // Adjust the left margin for mobile
+var leftMargin = isMobile ? 10 + scrollbarWidth : 130; 
 
     var resume;
     var lastTimestamp = 0;
-    var frameRate = 1000; // Adjust as needed
+    var frameRate = 1000;
     var interval = 1000 / frameRate;
 
 
@@ -150,6 +151,10 @@ The beginning is no more.
 There is no end.
 All to find is here.
 
+
+LOADING SHOWREEL ...
+↳ VIDEO BELOW ...
+↳ CLICK PLAY ...
 */
 
 
@@ -168,7 +173,7 @@ All to find is here.
     db.style.overflow = "scroll";
     $.textBaseline = "top";
     
-    // Adjust the font size for mobile
+    // Mobile font size
     $.font = isMobile ? "1.1em monospace" : "1.1em monospace";
     
     function drawText(text, x, y) {
@@ -219,7 +224,7 @@ All to find is here.
 
 <!-- Video -->
 <div class="video-container">
-    <iframe width="560" height="315" src="MX1000SHOWREEL.mp4" frameborder="0" allowfullscreen></iframe>
+    <iframe width="800" height="1600" src="MX1000SHOWREEL.mp4" frameborder="0" allowfullscreen></iframe>
 </div>
 
 
