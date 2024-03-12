@@ -39,7 +39,7 @@
     c.width = isMobile ? window.innerWidth : 800;
     c.height = isMobile ? window.innerHeight : 600;
 var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    var leftMargin = isMobile ? 10 : 130; // Adjust the left margin for mobile
+var leftMargin = isMobile ? 10 + scrollbarWidth : 130; // Adjust the left margin for mobile
 
     var resume;
     var lastTimestamp = 0;
