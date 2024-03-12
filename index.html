@@ -21,7 +21,23 @@ body {
             display: block; /* Remove default canvas alignment */
             background-color: black; /* Set canvas background color to black */
             white-space: nowrap; /* Prevent text wrapping */
-        }
+    margin-bottom: -200px; /* Adjust the margin-bottom value as needed */
+}
+
+  /* Add this style to center the video */
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+  }
+
+  iframe {
+    max-width: 100%; /* Ensure the video doesn't exceed the width of its container */
+    max-height: 100%; /* Ensure the video doesn't exceed the height of its container */
+  }
+
+
     </style>
 </head>
 
@@ -137,8 +153,6 @@ All to find is here.
 */
 
 
-
-
 </script>
 
 <script>
@@ -148,7 +162,7 @@ All to find is here.
     x = 0;
     y = 1;
     c.width = w = isMobile ? window.innerWidth : 1000;
-    c.height = h = _s.length * 20;
+    c.height = h = _s.length * 17;
     db.style.margin = 0;
     db.style.background = "black";
     db.style.overflow = "scroll";
@@ -202,6 +216,13 @@ All to find is here.
     relay();
   
 </script>
+
+<!-- Video -->
+<div class="video-container">
+    <iframe width="560" height="315" src="MX1000SHOWREEL.mp4" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
 
 </body>
 </html>
