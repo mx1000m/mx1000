@@ -1,0 +1,273 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MX1000</title>
+
+    <!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='25' y='75' font-size='79'>🟢</text></svg>">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <style>
+body {
+    background-color: black;
+    margin: 0;
+    overflow-x: auto; /* Enable horizontal scroll for mobile */
+    overflow-y: hidden;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+ /* Canvas CSS */
+        canvas {
+            display: block; /* Remove default canvas alignment */
+            background-color: black; /* Set canvas background color to black */
+            white-space: nowrap; /* Prevent text wrapping */
+    margin-bottom: -55px; /* Adjust the margin-bottom value as needed */
+}
+
+  /* Video */
+  .video-container {
+            position: relative;
+            width: 100%; /* Full width of the page */
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+            border: 2px solid limegreen; /* Green frame around video */
+            box-sizing: border-box;
+            overflow: hidden;
+            box-shadow: 0 0 10px 1px limegreen; /* Glow effect */
+        }
+
+        /* Responsive Video */
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+
+    footer {
+            text-align: center;
+            color: limegreen;
+            margin-top: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.8em;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid limegreen;
+            width: 80%;
+            margin: 0 auto;
+        }
+        a {
+            color: limegreen;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+<canvas id ='ResumeMX'></canvas>
+
+
+<script>
+    var db = document.body;
+    var c = document.getElementById('ResumeMX');
+    var $ = c.getContext('2d');
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    // Canvas dimensions for mobile and desktop
+    c.width = isMobile ? window.innerWidth : 800;
+    c.height = isMobile ? window.innerHeight : 600;
+var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+var leftMargin = isMobile ? 10 + scrollbarWidth : 130; 
+
+    var resume;
+    var lastTimestamp = 0;
+    var frameRate = 1000;
+    var interval = 1000 / frameRate;
+
+
+
+
+    function relay(timestamp) {
+        if (!lastTimestamp || timestamp - lastTimestamp >= interval) {
+            lastTimestamp = timestamp;
+            resume();
+        }
+
+        window.requestAnimationFrame(relay);
+    }
+</script>
+
+
+
+<!--Script MX!-->
+<script>
+
+/* 
+NAME: MAX
+ALIAS: MX1000
+DATE OF BIRTH: ██ / ██ / 1989
+
+░█████╗░██████╗░████████╗
+██╔══██╗██╔══██╗╚══██╔══╝
+███████║██████╔╝░░░██║░░░
+██╔══██║██╔══██╗░░░██║░░░
+██║░░██║██║░░██║░░░██║░░░
+╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░
+
+██████╗░██╗██████╗░███████╗░█████╗░████████╗░█████╗░██████╗░
+██╔══██╗██║██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗
+██║░░██║██║██████╔╝█████╗░░██║░░╚═╝░░░██║░░░██║░░██║██████╔╝
+██║░░██║██║██╔══██╗██╔══╝░░██║░░██╗░░░██║░░░██║░░██║██╔══██╗
+██████╔╝██║██║░░██║███████╗╚█████╔╝░░░██║░░░╚█████╔╝██║░░██║
+╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝░╚════╝░░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝
+
+Art Director for a decade +
+₿| Onchain since 5 years |₿
+
+----------
+
+𝗘𝗫𝗣𝗘𝗥𝗜𝗘𝗡𝗖𝗘:
+▶ Creative Director / Art Director / Co-founder
+@Wunder Studio d.o.o. / Zagreb, Croatia / Sept 2017 - Present
+
+▶ Creative Director
+@TBWA Zagreb / Croatia / Sept 2016 - Sept 2017
+
+▶ Art Director
+@TBWA Paris / France / Jan 2014 - Jun 2016
+
+▶ Art Director Assistant
+@BDDP Unlimited / Paris, France / Sept 2013 - Dec 2013
+
+----------
+
+𝗘𝗗𝗨𝗖𝗔𝗧𝗜𝗢𝗡:
+  Master in Art Direction
+  @SUP DE PUB - INSEEC / Paris, France / 2012
+
+----------
+
+𝗧𝗢𝗢𝗟𝗦:
+  Photoshop / Illustrator / InDesign / 
+  After Effect / Blender 3D / HTML / CSS
+
+----------
+
+𝗟𝗔𝗡𝗚𝗨𝗔𝗚𝗘𝗦:
+  French / English / German / Croatian (Basic)
+
+⣿⣿⣿⡿⠿⠿⠿⠿⢿⣿⣿⣿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⢟⣵⣾⣿⣿⣿⣿⣷⣎⢛⣵⣿⣿⣿⣶⣭⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣣⣿⣿⣿⠿⣻⣛⣛⣛⣛⣙⣿⣿⣿⣿⣿⣿⣷⡜⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣌⢻⣿⣿⣿⣿⣦⣙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⡿⢟⣛⣛⣛⣛⣛⡛⠿⣟⡢⢻⣿⣿⣿⠿⣿⣷⣘⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⢏⣕⣭⣶⣶⣾⣿⣶⣦⣓⠬⡳⣮⢿⡟⡫⣒⣦⣤⣄⠢⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣷⣶⣴⣒⠆⠐⠀⢠⠄⣿⣷⡎⣎⢸⢟⠀⠀⢀⠐⣮⣅⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣷⣝⠷⣦⣤⣀⡀⠿⠿⢛⡈⢺⣈⣀⣀⣈⣀⣛⡡⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⢿⣿⣿⣿⣿⣷⣶⣶⣯⣭⡭⣩⣶⣿⣦⣌⠩⣿⣯⣁⣌⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⡋⠻⠿⢿⣿⣿⣿⣿⣛⣫⣥⣾⣿⣿⣿⣿⣿⣷⣾⣿⣿⣿⠏⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣧⡛⢠⡒⠮⢭⣭⣝⣛⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⠿⡋⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣶⣬⣟⡲⢦⣭⣭⣭⣭⣛⣒⣒⣒⣒⣒⣒⣒⣒⣊⡴⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣶⣭⣙⣛⡛⠿⠿⠿⠿⠿⠿⠿⠿⠟⣛⢵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢛⣍⡛⢟⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⡿⣟⡱⣾⡿⠿⢿⣧⣝⡻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡙⢿⣬⡁⡭⡦⢖⣡⣶⣿⣿⣎⠻⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡌⣿⣧⠚⣼⣿⡿⢋⣽⣿⢿⣷⡸⣿⣿⣿⣿⣿⣿⣿
+
+LOADING SHOWREEL ...
+↳ VIDEO BELOW ...
+↳ CLICK PLAY ...
+*/
+
+
+</script>
+
+<script>
+
+
+     _s = db.querySelectorAll("script")[1].innerHTML.split("\n");
+    x = 0;
+    y = 1;
+    c.width = w = isMobile ? window.innerWidth : 1000;
+    c.height = h = _s.length * 17;
+    db.style.margin = 0;
+    db.style.background = "black";
+    db.style.overflow = "scroll";
+    $.textBaseline = "top";
+    
+    // Mobile font size
+    $.font = isMobile ? "0.8em monospace" : "1.1em monospace";
+    
+    function drawText(text, x, y) {
+        var lines = text.split('\n');
+        lines.forEach(function (line, i) {
+            $.fillText(line, x, y + i * 16);
+        });
+    }
+
+    resume = function () {
+        $.globalCompositeOperation = "source-over";
+        $.shadowBlur = 0;
+        $.fillStyle = "hsla(0,0%,0%,0.4)";
+        $.fillRect(0, 0, w, h);
+        $.shadowColor = "hsla(120,100%,50%,0.5)";
+        $.shadowBlur = 9;
+        $.fillStyle = "hsla(120,100%,20%,1)";
+        $.globalCompositeOperation = "lighter";
+
+        _s.forEach(function (t, i) {
+            if (i <= y) {
+                if (i == y) {
+                    t = t.substr(0, x);
+                }
+                drawText(t, leftMargin, 40 + i * 16);
+            }
+        });
+
+        $.fillStyle = "hsla(120,100%,50%,1)";
+        $.fillRect(leftMargin + $.measureText(_s[y].substr(0, x)).width, 42 + y * 16, 10, 14);
+        x += 3;
+        if (x >= _s[y].length) {
+            y++;
+            x = 0;
+        }
+        if (y * 16 > innerHeight - 10) {
+            y += 1;
+            $.translate(0, 0);
+        }
+        if (y >= _s.length - 1) {
+            window.clearInterval();
+        }
+    }
+
+    relay();
+  
+</script>
+
+<!-- Video -->
+<div class="video-container">
+    <iframe src="MX1000SHOWREEL.mp4" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+
+<footer>
+    <p><a href="https://x.com/mx1000m" target="_blank">MX1000</a></p>
+</footer>
+
+</body>
+</html>
